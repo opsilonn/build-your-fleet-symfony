@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Disconnect {% endblock %}
+
+
+{% block body %}
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../img/Wallpaper_Mainpage.jpg"); 
+        }
+    </style>
+
+    <!-- Buttons at the top of the page -->
+    {% include 'components/button_connection.html.twig' %}
+    {% include 'components/button_title.html.twig' %}
+
+    <div style="margin: auto" class="customBox">
+        <h1>
+            We're sorry to see you leave...
+            <br>
+            We hope to see you soon ! :)
+        </h1>
+        <img src="../img/Icon.png" alt="The logo">
+    </div>
+
+{% endblock %}

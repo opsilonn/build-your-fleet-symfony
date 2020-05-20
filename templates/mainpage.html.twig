@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("img/Wallpaper_Mainpage.jpg"); 
+        }
+    </style>
+
+    <!-- Buttons at the top of the page -->
+    {% include 'components/button_sorting.html.twig' %}
+    {% include 'components/button_connection.html.twig' %}
+    {% include 'components/button_title.html.twig' %}
+
+    <!-- We display all our Spaceships -->
+    {% for spaceship in spaceships %}
+        
+        <div class="customBox">
+            <a href="{{ path('spaceship_show', {'id' : spaceship.id }) }}">
+
+                <div style="font-size: 64px">
+                    {{ spaceship.name }}
+                </div>
+
+                <div style="font-size: 48px">	
+                    ~ {{ spaceship.franchise }} ~
+                </div>
+                <div class="flex-container" style="margin:30px;">
+                    <table align=center>
+                        <tr>
+                            <img src="{{ spaceship.getImagePath }}" alt="picture of {{ spaceship.name }}">
+                        </tr>
+
+                        <tr>
+                            <div style="">
+                                <table align=center>
+                                    <tr>
+                                        <th>Size</th>
+                                        <th>{{ spaceship.size }}</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Purpose</td>
+                                        <td>{{ spaceship.purpose }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Crew Size</td>
+                                        <td>
+                                            {% if spaceship.sizeCrew is null %}
+                                                Unknown
+                                            {% else %}
+                                                {{ spaceship.sizeCrew|number_format(0, '.', ' ') }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Price</td>
+                                        <td>
+                                            {% if spaceship.price is null %}
+                                                Unknown
+                                            {% else %}
+                                                {{ spaceship.price|number_format(2, '.', ' ') }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>				  
+
+                                    <tr>
+                                        <td>Assets</td>
+                                        <td>
+                                            {% if spaceship.assets is null %}
+                                                Unknown
+                                            {% else %}
+                                                {{ spaceship.assets }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+
+    {% else %}
+    
+        <!-- else : there was 0 spaceship, so we display an error message instead -->
+        <div class="customBoxSmall" style="font-size: 48px">
+            Sorry, There is no Spaceship to display here...
+            <br>
+            <br>
+            Sorry for the inconvenience:'(
+        </div>
+
+    {% endfor %}
+
+    <!-- A button to go back to the top of the page -->
+    {% include 'components/button_mainpage.html.twig' %}
+
+{% endblock %}

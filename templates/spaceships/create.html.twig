@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - New Spaceship {% endblock %}
+
+
+{% block body %}
+
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../img/Wallpaper_Form.jpg"); 
+        }
+    </style>
+    
+    <!-- A button to go back to the main page -->
+    {% include 'components/button_mainpage.html.twig' %}
+
+
+    <div class="customBoxForm">
+
+        <!-- TITLE -->
+        <h2 style="text-align: center;">New Spaceship</h2>
+
+        <form
+            style="margin-left: 75px;"
+            method="post"
+            enctype="multipart/form-data">
+
+            <!-- CRSF TOKEN -->
+            <input hidden type="text" name="token" value="{{ csrf_token('spaceship_create') }}">
+
+            <p style="text-align: center;">
+                Input written in <strong> Strong case</strong> are required
+            </p><br>
+
+            <p> Name : </p>
+
+            <!-- NAME -->
+            <div>
+                <input
+                type ="text"
+                name ="name"
+                required/>
+                <strong><em> - Spaceship's Name (Manufacture's name)</em></strong>
+            </div>
+
+            <!-- FRANCHISE -->
+            <div>
+                <input
+                type ="text"
+                name ="franchise"
+                required/>
+                <em> - Spaceship's Franchise</em>
+            </div>
+
+            <!-- PURPOSE -->
+            <div>
+                <select
+                name ="purpose"
+                required>
+                    <option> Civil</option>
+                    <option> Company</option>  
+                    <option> Military</option>
+                    <option> Personal</option>
+                    <option> Scientific</option> 
+                </select>
+                <strong><em> - Purpose</em></strong>
+            </div>
+
+            <!-- SIZE -->
+            <div>
+                <select
+                name ="size"
+                required>
+                    <option> Satellite</option> 
+                    <option> Individual Spaceship</option>
+                    <option> Shuttle</option>
+                    <option> Frigate</option>
+                    <option> Cruiser</option> 
+                    <option> Space Station</option> 
+                </select>
+                <strong><em> - Spaceship's Size Indicator</em></strong>
+            </div>
+
+            <!-- SIZE OF THE CREW -->
+            <div>
+                <input
+                type ="number"
+                name ="sizeCrew"/>
+                <em> - Crew's Size</em>
+            </div>
+
+
+
+            <p> Sales : </p>
+
+            <!-- PRICE -->
+            <div>
+                <input
+                type ="number"
+                name ="price"
+                required/>
+                <em> - Price</em>
+            </div>
+
+            <!-- AVAILABLE -->
+            <div>
+                <input
+                type ="number"
+                name ="available"/>
+                <em> - Currently Available</em>
+            </div>
+
+
+
+            <p> Dimensions : </p>
+            
+            <!-- HEIGHT -->
+            <div>
+                <input
+                type ="number"
+                name ="height"/>
+                <em> - Height</em>
+            </div>
+
+            <!-- LENGTH -->
+            <div>
+                <input
+                type ="number"
+                name ="length"/>
+                <em> - Length</em>
+            </div>
+
+            <!-- WIDTH -->
+            <div>
+                <input
+                type ="number"
+                name ="width"/>
+                <em> - Width</em>
+            </div>
+            
+
+
+            <p> Additionnal Details : </p>
+
+            <!-- ASSETS -->
+            <div>
+                <textarea
+                name="assets"
+                cols="30"
+                rows="4"></textarea>
+                <em> - Assets</em>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div>
+                <textarea
+                name="description"
+                cols="30"
+                rows="4"></textarea>
+                <em> - Description</em>
+            </div>
+
+
+
+            <div style="text-align: center;">
+                <p><em> Please add a picture (format : JPG)</em></p>
+
+                <input type="file" name="picture"/>
+            </div>
+
+
+
+            <div style="text-align: center;">
+                <input type="submit" value="Create New Spaceship"/>
+            </div>
+        </form>
+    </div>
+
+
+    
+    <!-- A button to go back to the main page -->
+    {% include 'components/button_mainpage.html.twig' %}
+
+{% endblock %}

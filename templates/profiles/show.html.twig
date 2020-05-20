@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - my profile {% endblock %}
+
+
+{% block body %}
+
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../img/Wallpaper_Form.jpg"); 
+        }
+    </style>
+    
+    <!-- A button to go back to the main page -->
+    {% include 'components/button_mainpage.html.twig' %}
+
+    <!-- CUSTOMER FORM -->
+    <div class="customBoxForm">
+
+        <!-- TITLE -->
+        <h2 style="text-align: center;">
+            Customer Page : ID = {{ profile.getID }}
+        </h2>
+
+        <form
+            method="post"
+            style="font: georgia; font-size: 24px;">
+
+            <p style="margin-left: 75px;">
+
+                <input
+                    type ="text"
+                    name ="fName"
+                    value = "{{ profile.getFName }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <strong><em> - First Name</em></strong><br><br><br>
+
+                <input
+                    type ="text"
+                    name ="lName"
+                    value = "{{ profile.getLName }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <strong><em> - Last Name</em></strong><br><br><br>
+
+                <input
+                    type ="email"
+                    name ="email"
+                    value = "{{ profile.getEmail }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <strong><em> - Email</em></strong><br><br><br>
+                
+                <input
+                    type ="password"
+                    name ="password"
+                    value = "{{ profile.getPassword }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <strong><em> - Password</em></strong><br><br><br>
+
+
+
+                <br><br> Address Data : <br><br>
+
+                <input
+                    type ="text"
+                    name ="galaxy"
+                    value = "{{ profile.getGalaxy }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <em> - Galaxy</em><br><br><br>
+
+                <input
+                    type ="text"
+                    name ="system"
+                    value = "{{ profile.getSystem }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <em> - Solar System</em><br><br><br>
+
+                <input
+                    type ="text"
+                    name ="planet"
+                    value = "{{ profile.getPlanet }}"
+                    {% if not modify %} disabled {% endif %}
+                    />
+                <em> - Planet</em><br><br><br>
+
+                <textarea
+                    name="address"
+                    cols="30"
+                    rows="4"
+                    {% if not modify %} disabled {% endif %}
+                    >{{ profile.getAddress }}</textarea>
+                <em> - Address</em><br><br><br>
+
+                <textarea
+                    name="description"
+                    cols="30"
+                    rows="4"
+                    {% if not modify %} disabled {% endif %}
+                    >{{ profile.getDescription }}</textarea>
+                <em> - Additionnal Data</em><br><br><br>
+
+
+                <div style="text-align: center;">
+
+                    {% if modify %}
+
+                        <input type="submit" name="profileModifyCancel" value="Cancel the changes"/>
+                        <input type="submit" name="profileModifySave" value="Save the changes"/>
+
+                    {% else %}
+
+                        <input type="submit" name="profileModifyStart" value="Modify my profile"/>
+                        <input type="submit" name="profileDelete" value="Delete my profile"/>
+
+                    {% endif %}
+                    
+                </div>
+            </p>
+        </form>
+    </div>
+
+    <!-- A button to go back to the main page -->
+    {% include 'components/button_mainpage.html.twig' %}
+{% endblock %}

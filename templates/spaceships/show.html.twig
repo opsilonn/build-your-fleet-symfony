@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - {{ spaceship.name }} {% endblock %}
+
+
+{% block body %}
+
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../img/Wallpaper_Mainpage.jpg"); 
+        }
+    </style>
+
+    <!-- Buttons at the top of the page -->
+    {% include 'components/button_sorting.html.twig' %}
+    {% include 'components/button_connection.html.twig' %}
+    {% include 'components/button_title.html.twig' %}
+
+    <div class="customBox">
+        <div style="font-size: 64px">
+            {{ spaceship.name }}
+        </div>
+
+        <div style="font-size: 48px">	
+            ~ {{ spaceship.franchise }} ~
+        </div>
+
+        <img src="../{{ spaceship.imagePath }}" alt="picture of {{ spaceship.name }}">
+
+        <br><br>
+
+        <table align=center>
+
+            <tr>
+                <th>Size</th>
+                <th>{{ spaceship.size }}</th>
+            </tr>
+
+            <tr>
+                <td>Purpose</td>
+                <td>{{ spaceship.purpose }}</td>
+            </tr>
+
+            <tr>
+                <td>Crew Size</td>
+                <td>
+                    {% if spaceship.sizeCrew is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.sizeCrew|number_format(0, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    {% if spaceship.price is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.price|number_format(2, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <td>Available</td>
+                <td>
+                    {% if spaceship.available is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.available|number_format(0, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>		
+
+            <tr>
+                <td>Height</td>
+                <td>
+                    {% if spaceship.height is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.height|number_format(0, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>	
+
+            <tr>
+                <td>Length</td>
+                <td>
+                    {% if spaceship.length is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.length|number_format(0, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>	
+
+            <tr>
+                <td>Width</td>
+                <td>
+                    {% if spaceship.width is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.width|number_format(0, '.', ' ') }}
+                    {% endif %}
+                </td>
+            </tr>			  
+
+            <tr>
+                <td>Assets</td>
+                <td>
+                    {% if spaceship.assets is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.assets }}
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td>
+                    {% if spaceship.description is null %}
+                        Unknown
+                    {% else %}
+                        {{ spaceship.description }}
+                    {% endif %}
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+
+
+
+    <!-- A button to go back to the top of the page -->
+    {% include 'components/button_mainpage.html.twig' %}
+{% endblock %}

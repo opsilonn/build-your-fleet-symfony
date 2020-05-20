@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Login {% endblock %}
+
+
+{% block body %}
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../img/Wallpaper_Connexion_Log_In.png"); 
+        }
+    </style>
+
+
+    <!-- A button to go back to the mainpage -->
+    {% include 'components/button_mainpage.html.twig' %}
+
+
+    <div style="height:auto; width:auto; display: flex;">
+
+        <!-- SIGN IN BUTTON -->
+        <div style="display: flex; margin: auto">
+            <a href="{{ path('profile_signIn') }}">
+                <div class="Button_Connection">
+                    <span> Sign In </span> 
+                </div>
+            </a>
+        </div>
+
+        <!-- LOG IN FORM -->
+        <div style="margin: auto" class="customBoxForm">
+
+            <form method="post">
+                <div style="margin-right: 50px;margin-left: 50px;">
+
+                    <input hidden type="text" name="token" value="{{ csrf_token('profile_login') }}">
+
+                    <div>
+                        <input
+                            size ="30"
+                            type ="email"
+                            name ="email"
+                            required/>
+                        <em>- Email</em>
+                    </div>
+
+                    <div>
+                        <input
+                            size ="30"
+                            type ="password"
+                            name ="password"
+                            required/>
+                        <em>- Password</em>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <input class="pointer" type="submit" value="Log in !"/>
+                    </div>
+                </>
+            </form>
+
+            {% if errorMessage is defined %}
+                <div class="redAlert"> {{ errorMessage }} </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

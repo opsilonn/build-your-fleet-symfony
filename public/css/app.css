@@ -1,0 +1,544 @@
+/*@import url('https://fonts.googleapis.com/css?family=Lato');*/
+body, html
+{
+  height: 100%;
+  margin: 0;
+  font-family: 'Pikmin';
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@font-face
+{
+  font-family: Pikmin;
+  src:url("Pikmin.ttf");
+}
+
+* {
+  font-family: Pikmin;
+}
+
+
+input, textarea, select
+{
+  border-radius: 15px;
+  width: 300px;
+  font-size: 24px;
+  margin: 50px 20px;
+}
+
+/* Changes the mouse's cursor on Pointer */
+.pointer { cursor: pointer }
+
+/* Declares the element as hidden */
+.hidden { visibility: hidden }
+
+/* Zooms when hovering */
+.zoom { transition: transform .2s; }
+.zoom:hover { transform: scale(1.2); }
+
+.smallZoom { transition: transform .2s; }
+.smallZoom:hover { transform: scale(1.05); }
+
+/* Disables the margin */
+.noMargin { margin: 0 }
+
+/* Flex layout */
+.flex-container {
+  resize: horizontal;
+  overflow: hidden;
+  display: flex;
+  margin: 1em;
+}
+
+.initial {
+ flex: initial;
+}
+
+.auto {
+ flex: auto;
+}
+
+.none {
+ flex: none;
+}
+
+/* centers an element horizontally */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Display a small red rounded div */
+.redAlert {
+  /* Borders of the Box */
+  border:5px solid rgba(34, 42, 53, 1);
+  border-radius:75px;
+  padding: 10px;
+  margin: 0px 10px;
+
+  /* Inside the Box : Background */
+  background-color :rgba(255, 51, 34, 0.75);
+
+  /* Inside the Box : The Text */
+  font-size: 24;
+  text-align: center;
+  text-shadow: 3px 2px rgba(34, 42, 53, 0.5);
+  color: rgba(255,255,255,0.75);
+}
+
+@keyframes Fade_In {
+    0%  {
+    	background-color: rgba(255, 255, 255, 0);
+    	border: 5px solid rgba(34, 42, 53, 0); 
+    	}
+
+    10% {
+    	background-color: rgba(255,255,255,0.05);
+    	border: 5px solid rgba(34,42,53,0.1);
+		}
+
+    20% {
+    	background-color: rgba(255,255,255,0.1);
+    	border: 5px solid rgba(34,42,53,0.2);
+    	}
+
+    30% {
+    	background-color: rgba(255,255,255,0.15);
+    	border: 5px solid rgba(34,42,53,0.3);
+    	}
+
+    40% {
+    	background-color: rgba(255,255,255,0.2);
+    	border: 5px solid rgba(34,42,53,0.4);
+    	}
+
+    50% {
+    	background-color: rgba(255,255,255,0.25);
+    	border: 5px solid rgba(34,42,53,0.5);
+    	}
+
+    60% {
+    	background-color: rgba(255,255,255,0.3);
+    	border: 5px solid rgba(34,42,53,0.6);
+    	}
+
+   	70% {
+    	background-color: rgba(255,255,255,0.35);
+    	border: 5px solid rgba(34,42,53,0.7);
+    	}
+
+    80% {
+    	background-color: rgba(255,255,255,0.4);
+    	border: 5px solid rgba(34,42,53,0.8);
+    	}
+
+    90% {
+    	background-color: rgba(255,255,255,0.45);
+    	border: 5px solid rgba(34,42,53,0.9);
+    	}
+
+    100%{
+    	background-color: rgba(255,255,255,0.5);
+  	  	border:5px solid rgba(34,42,53,1);
+    	}
+}
+
+
+a, a:visited, a:hover, a:active
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+.customBox
+{
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 3px 2px rgba(34,42,53,1);
+  color: rgba(255,255,255,1);
+  width: 1400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(34,42,53,0.9);
+  border:4px solid rgba(0,0,0,1);
+  border-radius:40px;
+  display:normal;
+}
+
+.customBox img {
+  height: 300px;
+  width: 500px;
+  border-radius: 40px;
+  margin:auto;
+}
+.customBox table
+{
+  border-collapse: collapse;
+  max-width: 70%;
+}
+
+.customBox th, .customBox td
+{
+  color:rgba(255,255,255,1);
+  font-size: 28px;
+
+  padding: 20px;
+  border-bottom: 2px solid rgba(255,255,255,1);
+
+  text-align: center; 
+  vertical-align: middle;
+}
+.customBox tr:nth-child(odd)
+{
+  background-color: rgba(49,57,68,0.9);
+}
+.customBox tr:nth-child(even)
+{
+  background-color: rgba(34,42,53,0.9);
+}
+.customBox th
+{
+  background-color: rgba(79,87,98,0.9);
+}
+
+
+.customBoxForm
+{
+  /* Size of the Box*/
+  margin: 50px;
+  padding:50px;
+
+  /* Borders of the Box*/
+  border:5px solid rgba(34,42,53,1);
+  border-radius:80px;
+
+  /* Inside the Box */
+  font-size: 32px;
+  text-align: left;
+  color: rgba(255,255,255,1);
+  background-color: rgba(34,42,53,0.8);
+  text-shadow: 3px 2px rgba(34,42,53,0.5);
+}
+
+
+.customBoxSmall
+{
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 3px 2px rgba(34,42,53,1);
+  color: rgba(255,255,255,1);
+  width: 750px;
+  margin: 20px auto;
+  background-color: rgba(34,42,53,0.9);
+  border:4px solid rgba(0,0,0,1);
+  border-radius:40px;
+  display:normal;
+}
+
+.Button_Sorting
+{
+  /* Size of the Box*/
+  width: 300px;
+  height: auto;
+
+  /* Borders of the Box*/
+  border:5px solid rgba(34, 42, 53, 1);
+  border-radius:75px;
+  padding: 10px;
+  margin: 0px 10px;
+
+  /* Inside the Box : Background*/
+  background-color: rgba(255, 255, 255, 0.5);
+
+  /* Inside the Box : The Text */
+  font-size: 24;
+  text-align: center;
+  text-shadow: 3px 2px rgba(34, 42, 53, 0.5);
+  color: rgba(34, 42, 53, 1);
+
+  /* Animation */
+  animation-name: Fade_In;
+  animation-duration: 1s;
+
+  /* Cursor */
+  cursor: pointer;
+}
+
+
+/*
+    HOVER EFFECT - highlights the button when the mouse is on it
+*/
+.Button_Sorting:hover
+{
+  background-color: rgba(34,42,53,0.5);
+  color: rgba(255,255,255,0.75);
+  border: 5px solid rgba(255,255,255,0.75);
+}
+
+/*
+    SPAN EFFECT - Adds additionnal text when the mouse is over the button
+*/
+.Button_Sorting span
+{
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Button_Sorting span:after
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.Button_Sorting:hover span
+{
+  padding-right: 30px;
+}
+
+.Button_Sorting:hover span:after
+{
+  opacity: 1;
+  right: 0;
+}
+
+.Button_Connection
+{
+    /* Size of the Box*/
+    width: 300px;
+    padding:10px;
+
+    /* Borders of the Box*/
+    border:5px solid rgba(34,42,53,1);
+    border-radius:45px;
+
+    /* Inside the Box : Background*/
+    background-color: rgba(255,255,255,0.5);
+
+    /* Inside the Box : The Text */
+    font-size: 48px;
+    text-align: center;
+    text-shadow: 3px 2px rgba(34,42,53,0.5);
+    color: rgba(34,42,53,1);
+
+    /* Animation */
+    animation-name: Fade_In;
+    animation-duration: 1s;
+
+    /* Cursor */
+    cursor: pointer;
+  
+    vertical-align: middle;
+}
+
+
+/*
+    HOVER EFFECT - highlights the button when the mouse is over it
+*/
+.Button_Connection:hover
+{
+    background-color: rgba(255,255,255,0.75);
+}
+
+/*
+    SPAN EFFECT - Adds additionnal text when the mouse is over the button
+*/
+.Button_Connection span
+{
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Button_Connection span:after
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.Button_Connection:hover span
+{
+  padding-right: 30px;
+}
+
+.Button_Connection:hover span:after
+{
+  opacity: 1;
+  right: 0;
+}
+
+.Button_Small
+{
+  /* Position of the Box*/
+  margin: 10px 20px;
+
+  /* Size of the Box*/
+  width: 200px;
+  padding:10px;
+
+  /* Borders of the Box*/
+  border:5px solid rgba(34,42,53,1);
+  border-radius:45px;
+
+  /* Inside the Box : Background*/
+  background-color: rgba(255,255,255,0.5);
+
+  /* Inside the Box : The Text */
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 3px 2px rgba(34,42,53,0.5);
+  color: rgba(34,42,53,1);
+
+  /* Animation */
+  animation-name: Fade_In;
+  animation-duration: 1s;
+
+  /* Cursor */
+  cursor: pointer;
+
+
+  vertical-align: middle;
+}
+
+
+/*
+    HOVER EFFECT - highlights the button when the mouse is over it
+*/
+.Button_Small:hover
+{
+  background-color: rgba(255,255,255,0.75);
+}
+
+/*
+    SPAN EFFECT - Adds additionnal text when the mouse is over the button
+*/
+.Button_Small span
+{
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Button_Small span:after
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.Button_Small:hover span
+{
+  padding-right: 30px;
+}
+
+.Button_Small:hover span:after
+{
+  opacity: 1;
+  right: 0;
+}
+
+
+.Button_Title
+{
+  /* Position of the Box*/
+  margin:auto;
+
+  /* Size of the Box*/
+  width: 600px;
+  padding: 10px;
+  margin: 30px;
+
+  /* Borders of the Box*/
+  border:5px solid rgba(34,42,53,1);
+  border-radius:80px;
+
+  /* Inside the Box : Background*/
+  background-color: rgba(255,255,255,0.5);
+
+  /* Inside the Box : The Text */
+  font-size: 48px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 3px 2px rgba(34,42,53,0.5);
+  color: rgba(34,42,53,1);
+
+  /* Animation */
+  animation-name: Fade_In;
+  animation-duration: 1s;
+
+  /* Cursor */
+  cursor: pointer;
+
+  transform: translateY(10px);
+}
+
+
+
+/*
+    HOVER EFFECT - highlights the button when the mouse is on it
+*/
+.Button_Title:hover
+{
+  background-color: rgba(34,42,53,0.5);
+  color: rgba(255,255,255,0.75);
+  border: 5px solid rgba(255,255,255,0.75);
+}
+
+/*
+    SPAN EFFECT - Adds additionnal text when the mouse is over the button
+*/
+.Button_Title span
+{
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Button_Title span:after
+{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.Button_Title:hover span
+{
+  padding-right: 30px;
+}
+
+.Button_Title:hover span:after
+{
+  opacity: 1;
+  right: 0;
+}
+
+
+#main {
+  display: flex;
+}
+
+#main div, #main a {
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Sort {% endblock %}
+
+
+{% block body %}
+
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("../../img/Wallpaper_Mainpage.jpg"); 
+        }
+    </style>
+
+    <!-- Buttons at the top of the page -->
+    {% include 'components/button_sorting.html.twig' %}
+    {% include 'components/button_connection.html.twig' %}
+    {% include 'components/button_title.html.twig' %}
+
+    {% for choice in choices %}
+
+        <div class="zoom customBoxSmall">
+            <a href="{{ path('mainpage') }}?sortBy={{ sortBy }}&category={{ choice }}">
+                <div style="padding: 10px">
+                    {{ choice }}
+                </div>
+            </a>
+        </div>
+    
+    {% else %}
+
+        <!-- else : Valid request, but we didn't find a thing... -->
+        <div class="customBoxSmall" style="font-size: 48px">
+            It seems that we have encountered an error with the database...
+            <br>
+            <br>
+            Sorry for the inconvenience:'(
+        </div>
+
+    {% endfor %}
+
+    <!-- A button to go back to the top of the page -->
+    {% include 'components/button_mainpage.html.twig' %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Homepage {% endblock %}
+
+
+{% block body %}
+    <!-- BACKGROUND OF THE PAGE -->
+    <style>
+        body, html
+        {
+            background-image: url("img/Wallpaper_Homepage.jpg"); 
+        }
+    </style>
+
+    {% include 'components/button_connection.html.twig' %}
+    {% include 'components/button_title.html.twig' %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Mainpage {% endblock %}
+
+
+
+{% block body %}
+    <a href="{{ path('spaceship_create') }}"> Lien vers formulaire</a>
+    
+    <br><br>
+
+    <h1>Spaceships !</h1>
+
+    <!-- We display all our Spaceships -->
+    {% for spaceship in spaceships %}
+
+        <spaceship>
+            <h2><a href="{{ path('spaceship_show', {id: spaceship.id}) }}">{{ spaceship.name }}</a></h2>
+            <h4>{{ spaceship.description }}</h4>
+        </spaceship>
+
+    <!-- else : there was 0 spaceship, so we display an error message instead -->
+    {% else %}
+
+        <p>Sorry, nothing to display here...</p>
+
+    {% endfor %}
+{% endblock %}

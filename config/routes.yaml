@@ -1,0 +1,42 @@
+# APP
+homepage:
+  path: /homepage
+  controller: App\Controller\AppController::homepage
+
+mainpage:
+  path: /
+  controller: App\Controller\AppController::mainpage
+
+
+
+# SPACESHIP
+spaceship_sort:
+  path: /spaceships/sort
+  controller: App\Controller\SpaceshipController::sort
+
+spaceship_show:
+  path: /spaceships/{id<[0-9]+>}
+  controller: App\Controller\SpaceshipController::show
+
+spaceship_create:
+  path: /spaceships/create
+  controller: App\Controller\SpaceshipController::create
+
+
+
+# PROFILE
+profile_logOut:
+  path: /profiles/logOut
+  controller: App\Controller\ProfileController::logOut
+
+profile_logIn:
+  path: /profiles/logIn
+  controller: App\Controller\ProfileController::logIn
+
+profile_signIn:
+  path: /profiles/signIn
+  controller: App\Controller\ProfileController::signIn
+
+profile_show:
+  path: /profiles/{id<[0-9]+>}
+  controller: App\Controller\ProfileController::show

@@ -1,0 +1,59 @@
+{% set userID = app.session.get('userID') %}
+{% set isAdmin = app.session.get('isAdmin') %}
+
+{% if userID is defined and userID != 0 %}
+
+    {% if isAdmin is defined and isAdmin == true %}
+
+        <!-- New Spaceship BUTTON -->
+        <div style="display: flex; justify-content: flex-end">
+            <a href="{{ path('spaceship_create') }}">
+                <div class="Button_Small">
+                        <span>Add New Spaceship</span>
+                </div>
+            </a>
+        </div>
+
+    {% else %}
+
+        <!-- Profile BUTTON -->
+        <div style="display: flex; justify-content: flex-end">
+            <a href="{{ path('profile_show', {'id' : userID }) }}">
+                <div class="Button_Small">
+                        <span>View Profile</span> 
+                </div>
+            </a>       
+        </div>
+
+    {% endif %}
+
+    <!-- DISCONNECT BUTTON -->
+		<div style="display: flex; justify-content: flex-end">
+            <a href="{{ path('profile_logOut') }}">
+            	<div class="Button_Small">
+	                 <span>Disconnect</span>
+	            </div>
+            </a>     
+       </div>
+
+{% else %}
+    
+    <!-- SIGN-IN BUTTON -->
+    <div style="display: flex; justify-content: flex-end">
+        <a href="{{ path('profile_signIn') }}">
+            <div class="Button_Small">
+                <span>Sign In</span> 
+            </div>
+        </a>
+    </div> 
+
+    <!-- LOG-IN BUTTON -->
+    <div style="display: flex; justify-content: flex-end">
+        <a href="{{ path('profile_logIn') }}">
+            <div class="Button_Small">
+                <span>Log In</span> 
+            </div>
+        </a>    
+    </div>
+
+{% endif %}
