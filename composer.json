@@ -17,6 +17,7 @@
         "symfony/orm-pack": "^1.0",
         "symfony/security-csrf": "5.0.*",
         "symfony/twig-bundle": "5.0.*",
+        "symfony/web-profiler-bundle": "5.0.*",
         "symfony/yaml": "5.0.*"
     },
     "require-dev": {
