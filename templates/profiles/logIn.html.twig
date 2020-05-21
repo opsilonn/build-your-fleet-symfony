@@ -23,14 +23,14 @@
         <!-- SIGN IN BUTTON -->
         <div style="display: flex; margin: auto">
             <a href="{{ path('profile_signIn') }}">
-                <div class="Button_Connection">
+                <div class="button-connection">
                     <span> Sign In </span> 
                 </div>
             </a>
         </div>
 
         <!-- LOG IN FORM -->
-        <div style="margin: auto" class="customBoxForm">
+        <div style="margin: auto" class="custom-box-form">
 
             <form method="post">
                 <div style="margin-right: 50px;margin-left: 50px;">
@@ -58,7 +58,8 @@
                     <div style="text-align: center;">
                         <input class="pointer" type="submit" value="Log in !"/>
                     </div>
-                </>
+
+                </div>
             </form>
 
             {% if errorMessage is defined %}

@@ -19,7 +19,7 @@
     <!-- We display all our Spaceships -->
     {% for spaceship in spaceships %}
         
-        <div class="customBox">
+        <div class="custom-box">
             <a href="{{ path('spaceship_show', {'id' : spaceship.id }) }}">
 
                 <div style="font-size: 64px">
@@ -36,7 +36,7 @@
                         </tr>
 
                         <tr>
-                            <div style="">
+                            <div>
                                 <table align=center>
                                     <tr>
                                         <th>Size</th>
@@ -90,7 +90,7 @@
     {% else %}
     
         <!-- else : there was 0 spaceship, so we display an error message instead -->
-        <div class="customBoxSmall" style="font-size: 48px">
+        <div class="custom-box-small" style="font-size: 48px">
             Sorry, There is no Spaceship to display here...
             <br>
             <br>

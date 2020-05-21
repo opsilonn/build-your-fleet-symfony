@@ -25,7 +25,7 @@ body, html
 input, textarea, select
 {
   border-radius: 15px;
-  width: 300px;
+  width: 50%;
   font-size: 24px;
   margin: 50px 20px;
 }
@@ -156,13 +156,13 @@ a, a:visited, a:hover, a:active
   text-decoration: none;
 }
 
-.customBox
+.custom-box
 {
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 2px rgba(34,42,53,1);
   color: rgba(255,255,255,1);
-  width: 1400px;
+  width: 85%;
   margin: 40px auto;
   padding: 20px;
   background-color: rgba(34,42,53,0.9);
@@ -171,19 +171,19 @@ a, a:visited, a:hover, a:active
   display:normal;
 }
 
-.customBox img {
-  height: 300px;
-  width: 500px;
+.custom-box img {
+  height: 40%;
+  width: 40%;
   border-radius: 40px;
   margin:auto;
 }
-.customBox table
+.custom-box table
 {
   border-collapse: collapse;
-  max-width: 70%;
+  max-width: 50%;
 }
 
-.customBox th, .customBox td
+.custom-box th, .custom-box td
 {
   color:rgba(255,255,255,1);
   font-size: 28px;
@@ -194,29 +194,29 @@ a, a:visited, a:hover, a:active
   text-align: center; 
   vertical-align: middle;
 }
-.customBox tr:nth-child(odd)
+.custom-box tr:nth-child(odd)
 {
   background-color: rgba(49,57,68,0.9);
 }
-.customBox tr:nth-child(even)
+.custom-box tr:nth-child(even)
 {
   background-color: rgba(34,42,53,0.9);
 }
-.customBox th
+.custom-box th
 {
   background-color: rgba(79,87,98,0.9);
 }
 
 
-.customBoxForm
+.custom-box-form
 {
   /* Size of the Box*/
-  margin: 50px;
-  padding:50px;
+  margin: 2.5%;
+  padding: 2.5%;
 
   /* Borders of the Box*/
   border:5px solid rgba(34,42,53,1);
-  border-radius:80px;
+  border-radius:50px;
 
   /* Inside the Box */
   font-size: 32px;
@@ -227,14 +227,14 @@ a, a:visited, a:hover, a:active
 }
 
 
-.customBoxSmall
+.custom-box-small
 {
   font-size: 36px;
   text-align: center;
   letter-spacing: 2px;
   text-shadow: 3px 2px rgba(34,42,53,1);
   color: rgba(255,255,255,1);
-  width: 750px;
+  width: 50%;
   margin: 20px auto;
   background-color: rgba(34,42,53,0.9);
   border:4px solid rgba(0,0,0,1);
@@ -242,7 +242,7 @@ a, a:visited, a:hover, a:active
   display:normal;
 }
 
-.Button_Sorting
+.button-sorting
 {
   /* Size of the Box*/
   width: 300px;
@@ -275,7 +275,7 @@ a, a:visited, a:hover, a:active
 /*
     HOVER EFFECT - highlights the button when the mouse is on it
 */
-.Button_Sorting:hover
+.button-sorting:hover
 {
   background-color: rgba(34,42,53,0.5);
   color: rgba(255,255,255,0.75);
@@ -285,14 +285,14 @@ a, a:visited, a:hover, a:active
 /*
     SPAN EFFECT - Adds additionnal text when the mouse is over the button
 */
-.Button_Sorting span
+.button-sorting span
 {
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Button_Sorting span:after
+.button-sorting span:after
 {
   content: '\00bb';
   position: absolute;
@@ -302,18 +302,18 @@ a, a:visited, a:hover, a:active
   transition: 0.5s;
 }
 
-.Button_Sorting:hover span
+.button-sorting:hover span
 {
   padding-right: 30px;
 }
 
-.Button_Sorting:hover span:after
+.button-sorting:hover span:after
 {
   opacity: 1;
   right: 0;
 }
 
-.Button_Connection
+.button-connection
 {
     /* Size of the Box*/
     width: 300px;
@@ -346,7 +346,7 @@ a, a:visited, a:hover, a:active
 /*
     HOVER EFFECT - highlights the button when the mouse is over it
 */
-.Button_Connection:hover
+.button-connection:hover
 {
     background-color: rgba(255,255,255,0.75);
 }
@@ -354,14 +354,14 @@ a, a:visited, a:hover, a:active
 /*
     SPAN EFFECT - Adds additionnal text when the mouse is over the button
 */
-.Button_Connection span
+.button-connection span
 {
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Button_Connection span:after
+.button-connection span:after
 {
   content: '\00bb';
   position: absolute;
@@ -371,18 +371,18 @@ a, a:visited, a:hover, a:active
   transition: 0.5s;
 }
 
-.Button_Connection:hover span
+.button-connection:hover span
 {
   padding-right: 30px;
 }
 
-.Button_Connection:hover span:after
+.button-connection:hover span:after
 {
   opacity: 1;
   right: 0;
 }
 
-.Button_Small
+.button-small
 {
   /* Position of the Box*/
   margin: 10px 20px;
@@ -419,7 +419,7 @@ a, a:visited, a:hover, a:active
 /*
     HOVER EFFECT - highlights the button when the mouse is over it
 */
-.Button_Small:hover
+.button-small:hover
 {
   background-color: rgba(255,255,255,0.75);
 }
@@ -427,14 +427,14 @@ a, a:visited, a:hover, a:active
 /*
     SPAN EFFECT - Adds additionnal text when the mouse is over the button
 */
-.Button_Small span
+.button-small span
 {
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Button_Small span:after
+.button-small span:after
 {
   content: '\00bb';
   position: absolute;
@@ -444,19 +444,19 @@ a, a:visited, a:hover, a:active
   transition: 0.5s;
 }
 
-.Button_Small:hover span
+.button-small:hover span
 {
   padding-right: 30px;
 }
 
-.Button_Small:hover span:after
+.button-small:hover span:after
 {
   opacity: 1;
   right: 0;
 }
 
 
-.Button_Title
+.button-title
 {
   /* Position of the Box*/
   margin:auto;
@@ -490,12 +490,10 @@ a, a:visited, a:hover, a:active
   transform: translateY(10px);
 }
 
-
-
 /*
     HOVER EFFECT - highlights the button when the mouse is on it
 */
-.Button_Title:hover
+.button-title:hover
 {
   background-color: rgba(34,42,53,0.5);
   color: rgba(255,255,255,0.75);
@@ -505,14 +503,14 @@ a, a:visited, a:hover, a:active
 /*
     SPAN EFFECT - Adds additionnal text when the mouse is over the button
 */
-.Button_Title span
+.button-title span
 {
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Button_Title span:after
+.button-title span:after
 {
   content: '\00bb';
   position: absolute;
@@ -522,12 +520,12 @@ a, a:visited, a:hover, a:active
   transition: 0.5s;
 }
 
-.Button_Title:hover span
+.button-title:hover span
 {
   padding-right: 30px;
 }
 
-.Button_Title:hover span:after
+.button-title:hover span:after
 {
   opacity: 1;
   right: 0;

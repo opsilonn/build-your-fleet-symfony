@@ -21,7 +21,7 @@
 
     {% for choice in choices %}
 
-        <div class="zoom customBoxSmall">
+        <div class="zoom custom-box-small">
             <a href="{{ path('mainpage') }}?sortBy={{ sortBy }}&category={{ choice }}">
                 <div style="padding: 10px">
                     {{ choice }}
@@ -32,7 +32,7 @@
     {% else %}
 
         <!-- else : Valid request, but we didn't find a thing... -->
-        <div class="customBoxSmall" style="font-size: 48px">
+        <div class="custom-box-small" style="font-size: 48px">
             It seems that we have encountered an error with the database...
             <br>
             <br>
