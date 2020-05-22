@@ -180,7 +180,7 @@ a, a:visited, a:hover, a:active
 .custom-box table
 {
   border-collapse: collapse;
-  max-width: 50%;
+  max-width: 75%;
 }
 
 .custom-box th, .custom-box td
