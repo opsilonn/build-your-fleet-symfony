@@ -7,8 +7,11 @@ During my semester abroad at MAHE (Manipal, India), we had to make a project in 
 Since I didn't want to make a basis project, like buy some items, or manage a library... I made a project where I buy some spaceships. Well, it ain't much, but it's honest work.
 
 
-There are a ot of unfinished stuff : you can order or add spaceships.
-The login works (I think), but I'm not sure for the creation of User.
+It's globally improved over the previous version : the Login / Signin is operational, you can edit your data and see spaceships...
+What remains for the moment is :
+- order a spaceship
+- see your previous order
+- maybe indicate a counter for your fleet ? Like, what would be its size / its prize ? Might be funny to implement...
 
 
 ## Authors
