@@ -212,12 +212,12 @@ class ProfileController extends AbstractController
                 }
                 
                 // If reached : the signin somehow failed
-                return $this->render('profiles/signin.html.twig', ['errorMessage' => $errorMessage]);
+                return $this->render('profiles/signIn.html.twig', ['errorMessage' => $errorMessage]);
             }
 
             // The user just arrived on the page :
             // => We display the form (no initial error message)
-            return $this->render('profiles/signin.html.twig');
+            return $this->render('profiles/signIn.html.twig');
         }
         // Otherwise : not allowed to be here !
         else
