@@ -38,7 +38,7 @@ class SpaceshipController extends AbstractController
         $allowedSizes = ["Satellite", "Individual Spaceship", "Shuttle", "Frigate", "Cruiser", "Space Station"];
 
         // If we have a criteria to search by :
-        if( $request->query->has('sortBy'))
+        if( $request->query->has('sortBy') )
         {
             // We get the criteria to sort by
             $sortBy = $request->query->get('sortBy');
