@@ -47,7 +47,7 @@ class SpaceshipRepository extends ServiceEntityRepository
             array_push($spaceshipsRandom, $spaceshipsFound[$rand]);
             
             // We remove from the array to select from
-            array_splice($$spaceshipsFound, $rand, 1);
+            array_splice($spaceshipsFound, $rand, 1);
         }
         
         // We return the list of random spaceships
