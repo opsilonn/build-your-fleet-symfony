@@ -28,9 +28,34 @@ class SpaceshipRepository extends ServiceEntityRepository
         // BEWARE : we currently ask ALL THE SPACESHIPS, then only take the XxX first.
         // We should only ask the a XxX amount from the database.
         // return array_slice($this->findAll(), 0, $cpt);
+        
+        // We get all the spaceships
+        $spaceshipsFound = $this->findAll();
+        
+        // If more spaceships are required than it is possible, then we return them all
+        if ($cpt > count($spaceshipsFound)) {
+            return $spaceshipsFound;
+        }
+        
+        // Otherwise, we randomly set them
+        $spaceshipsRandom = array();
+        for ($i = 0; $i < count($spaceshipsFound); $i++) {
+            // We select a random index
+            $rand = rand(0, count($spaceshipsFound));
+            
+            // We add to the returning array
+            array_push($spaceshipsRandom, $spaceshipsFound[$rand]);
+            
+            // We remove from the array to select from
+            array_splice($$spaceshipsFound, $rand, 1);
+        }
+        
+        // We return the list of random spaceships
+        return $spaceshipsRandom;
 
 
         // We connect to the database's table
+        /*
         $conn = $this->getEntityManager()->getConnection();
 
         // We prepare our SQL query
@@ -41,11 +66,12 @@ class SpaceshipRepository extends ServiceEntityRepository
     
         // returns an array of arrays (i.e. a raw data set)
         return $stmt->fetchAll();
+        */
     }
 
 
     /**
-     * Find a random amount of Spaceships
+     * Selects all distinct Franchises that exist in the database
      */
     public function findAllFranchises(): array
     {
