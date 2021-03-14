@@ -39,7 +39,7 @@ class SpaceshipRepository extends ServiceEntityRepository
         
         // Otherwise, we randomly set them
         $spaceshipsRandom = array();
-        for ($i = 0; $i < count($spaceshipsFound); $i++) {
+        for ($i = 0; $i < $cpt; $i++) {
             // We select a random index
             $rand = rand(0, count($spaceshipsFound) - 1);
             
