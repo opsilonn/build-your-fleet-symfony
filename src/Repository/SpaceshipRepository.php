@@ -27,23 +27,20 @@ class SpaceshipRepository extends ServiceEntityRepository
     {
         // BEWARE : we currently ask ALL THE SPACESHIPS, then only take the XxX first.
         // We should only ask the a XxX amount from the database.
-        return array_slice($this->findAll(), 0, $cpt);
+        // return array_slice($this->findAll(), 0, $cpt);
 
 
-        /*
         // We connect to the database's table
         $conn = $this->getEntityManager()->getConnection();
 
         // We prepare our SQL query
-        $sql = "SELECT * FROM spaceship
-            ORDER BY RAND() LIMIT $cpt";
+        $sql = "SELECT * FROM spaceship ORDER BY RAND() LIMIT $cpt";
         
-        // We apply or SQL query (singleine, since we don't input any variable)
+        // We apply or SQL query (singleline, since we don't input any variable)
         $stmt = $conn->query($sql);
     
         // returns an array of arrays (i.e. a raw data set)
         return $stmt->fetchAll();
-        */
     }
 
 
